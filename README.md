@@ -1,4 +1,4 @@
-# Hugo template
+# Hugo Bootstrap
 
 ### Summary
 
@@ -43,6 +43,4 @@ chmod +x deploy.sh
 
 ```
 
-
-
-
+You can now checkout your live website at <username>.github.io/<repo>
