@@ -35,6 +35,12 @@ if [ "$(ls .)" == $SCRIPT  ]; then
 	REPO=${INFO_ARRAY[4]}
 	BASE="https:\/\/${USER}.github.io\/${REPO}"
 	sed -i '' "1s/.*/baseURL = \"$BASE\"/" config.toml
+	git add . 
+	git commit . -m "[HUGO] added base url"
+	echo
+
+	echo "[BOOTSTRAP] pushing to github"
+	git push --all
 	echo
 	
 else
