@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCRIPT=`basename "$0"`
+SCRIPT=$(basename "$0")
 
 if [ "$(ls .)" == $SCRIPT  ]; then
 	
