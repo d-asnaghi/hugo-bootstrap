@@ -57,4 +57,4 @@ cd public && git add --all && git commit -m "[HUGO] deployed 2020-04-27"
 
 echo Pushing to github
 # git push --all
-hugo server -t $THEME
+hugo server
