@@ -6,7 +6,6 @@ if [ "$(ls .)" == $SCRIPT  ]; then
 	
 	echo "[BOOTSTRAP] bootstrapping website"
 	hugo new site . --force
-	git init
 	echo
 
 	echo "[BOOTSTRAP] ignore generated folders"
@@ -28,6 +27,15 @@ if [ "$(ls .)" == $SCRIPT  ]; then
 	git add . 
 	git commit -m "[HUGO] added a theme"
 	echo 
+
+	echo "[BOOTSTRAP] add the correct base url"
+	REMOTE_URL=$(git remote get-url origin)
+	INFO_ARRAY=(${REMOTE_URL//[\/.]/ })	
+	USER=${INFO_ARRAY[3]}
+	REPO=${INFO_ARRAY[4]}
+	BASE="https:\/\/${USER}.github.io\/${REPO}"
+	sed -i '' "1s/.*/baseURL = \"$BASE\"/" config.toml
+	echo
 	
 else
 
@@ -61,7 +69,6 @@ else
 	echo 
 
 	echo "[DEPLOY] pushing to github"
-	# git push --all
-	hugo server
+	git push --all
 
 fi
