@@ -44,3 +44,7 @@ chmod +x deploy.sh
 ```
 
 You can now checkout your live website at `<username>.github.io/<repo>`
+
+### Edit
+
+After customizing the website, you can deploy the changes by running `./deploy.sh` again.
