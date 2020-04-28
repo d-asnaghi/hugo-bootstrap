@@ -1,4 +1,4 @@
-# Hugo template
+# Hugo Bootstrap
 
 ### Summary
 
@@ -6,7 +6,7 @@
 
 The `deploy.sh` script is aimed at setting up any new github repo to 
 create a new static website using hugo and automatically deploy it 
-to gihub pages, address <username>.github.io/<repo>
+to gihub pages, address `<username>.github.io/<repo>`
 
 ### Instructions
 
@@ -43,6 +43,8 @@ chmod +x deploy.sh
 
 ```
 
+You can now checkout your live website at `<username>.github.io/<repo>`
 
+### Edit
 
-
+After customizing the website, you can deploy the changes by running `./deploy.sh` again.
