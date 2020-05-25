@@ -21,13 +21,6 @@ if [ "$(ls .)" == $SCRIPT  ]; then
 	git checkout master
 	echo
 
-	echo "[BOOTSTRAP] adding the vanilla theme"
-	echo "theme = \"vanilla\"" >> config.toml
-	git submodule add https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git themes/vanilla
-	git add . 
-	git commit -m "[HUGO] added a theme"
-	echo 
-
 	echo "[BOOTSTRAP] add the correct base url"
 	REMOTE_URL=$(git remote get-url origin)
 	INFO_ARRAY=(${REMOTE_URL//[\/.]/ })	
@@ -71,7 +64,7 @@ else
 	echo
 
 	echo "[DEPLOY] updating gh-pages branch"
-	cd public && git add --all && git commit -m "[HUGO] deployed 2020-04-27"
+	cd public && git add --all && git commit -m "[HUGO] deployed $( date +%F )"
 	echo 
 
 	echo "[DEPLOY] pushing to github"
